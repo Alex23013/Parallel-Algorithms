@@ -1,0 +1,14 @@
+ssh mcornejo@manati.iiap.org.pe
+pass: maria23013
+qsub -I -l nodes=1:ppn=12:gpus=1 -q batch
+
+pwd
+
+touch tu_codigo.cu
+//poner codigo con vi tu_codigo.cu
+:i      inserta
+:wq     guarda y cierra
+
+/usr/local/cuda/bin/nvcc tu_codigo.cu -o as --std=c++11
+
+./as
